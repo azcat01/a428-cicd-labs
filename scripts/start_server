@@ -3,5 +3,5 @@
 cd /app
 
 npm run build
-npm start &
+npm start
 pm2 start --name "react-app" npm -- start
