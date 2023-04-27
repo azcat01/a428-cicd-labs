@@ -5,3 +5,4 @@ cd /app
 npm run build
 npm start &
 pm2 start npm --name "react-app" -- start
+echo $! > .pidfile
