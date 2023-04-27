@@ -1,3 +1,5 @@
+// Declarative Pipeline is recommended if Jenkins is running in a docker container
+
 // Declarative Pipeline //
 
 pipeline {
