@@ -15,7 +15,7 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/build
+    - location: scripts/build_app
       timout: 300
       runas: root
   ApplicationStart:
