@@ -14,9 +14,9 @@ hooks:
     - location: scripts/install_dependencies
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
+  AfterInstall:
+    - location: scripts/build
+      timout: 300
       runas: root
   ApplicationStart:
     - location: scripts/start_server

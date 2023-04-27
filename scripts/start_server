@@ -2,5 +2,4 @@
 
 cd /app
 
-npm run build
 pm2 start --name "react-app" npm -- start
