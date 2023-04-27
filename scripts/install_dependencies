@@ -3,7 +3,7 @@
 cd /app
 
 curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-yum -y install nodejs npm
+yum install nodejs npm -y
 
 npm install
 npm install pm2 -g
