@@ -1,3 +1,5 @@
+// Declarative Pipeline //
+
 pipeline {
     agent {
         docker {
@@ -19,12 +21,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)'
+                // input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)'
+                sleep(1, unit:'MINUTES')               
                 sh './jenkins/scripts/kill.sh'
             }
         }
     }
 }
+
+// Scripted Pipeline //
 
 // node {
 //     docker.image('node:16-buster-slim').inside('-p 3000:3000') {
