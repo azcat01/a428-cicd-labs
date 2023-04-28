@@ -2,7 +2,7 @@
 
 cd /app
 
-curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+# curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
 yum install nodejs -y
 npm install
 npm install react react-dom react-scripts
