@@ -74,7 +74,7 @@ node {
             withAWS(credentials: 'react-app-server', region:'ap-southeast-1') {
                 createDeployment(
                     gitHubRepository: 'azcat01/a428-cicd-labs',
-                    gitHubCommitId: '5bf49b9769305aebd5186ca4f4e65df94ec6a8c7',
+                    gitHubCommitId: '333a6597d75749b03c60814d1c6e37c6271bc704',
                     applicationName: 'react-app',
                     deploymentGroupName: 'CodeDeploy-react-app',
                     deploymentConfigName: 'CodeDeployDefault.AllAtOnce',
