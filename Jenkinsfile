@@ -39,7 +39,7 @@
 // Scripted Pipeline //
 
 node {
-    docker.image('node:16-buster-slim').inside('-p 3000:3000') {
+    docker.image('node:16-buster-slim').inside('-p 80:80') {
         stage('Build') { 
             sh 'npm install' 
         }
