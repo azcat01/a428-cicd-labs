@@ -25,12 +25,28 @@ pipeline {
                 input message:  "Lanjutkan ke tahap Deploy?"
             }
         }
-        stage('Deploy') {
+        stage('Deploy Local') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
                 // input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)'
-                sleep(time: 1, unit: 'MINUTES')
+                // sleep(time: 1, unit: 'MINUTES')
                 sh './jenkins/scripts/kill.sh'
+            }
+        }
+        stage('Deploy AWS') {
+            steps {
+                withAWS(credentials: 'react-app-server', region:'ap-southeast-1') {
+                    createDeployment(
+                        gitHubRepository: 'azcat01/a428-cicd-labs',
+                        gitHubCommitId: '5bf49b9769305aebd5186ca4f4e65df94ec6a8c7',
+                        applicationName: 'react-app',
+                        deploymentGroupName: 'CodeDeploy-react-app',
+                        deploymentConfigName: 'CodeDeployDefault.AllAtOnce',
+                        description: 'Deployment from Jenkins Local',
+                        waitForCompletion: 'true'
+                    )
+
+                }
             }
         }
     }
