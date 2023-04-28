@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /app
+
+pm2 stop react-app
+pm2 delete react-app
