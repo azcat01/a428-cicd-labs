@@ -8,9 +8,9 @@ sudo apt-get install nodejs -y
 if [ -d "../node_modules" ] 
 then
   rm -rf "../node_modules"
-  npm cache clean --force
 fi
 
+npm cache clean --force
 npm install
 npm install react react-dom react-scripts
 npm install pm2 -g
