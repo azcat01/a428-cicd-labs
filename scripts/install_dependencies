@@ -16,6 +16,5 @@ then
 fi
 
 npm cache clean --force
-npm set progress=false
-npm install
+npm install --verbose
 npm install pm2 -g
