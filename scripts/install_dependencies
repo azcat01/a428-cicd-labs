@@ -11,6 +11,6 @@ then
 fi
 
 npm cache clean --force
-npm install
+npm install --verbose
 npm install react react-dom react-scripts
 npm install pm2 -g
